@@ -56,13 +56,13 @@ def is_missing(year, artist, genre, album):
     :return: False if everything is ok, HTTPError if something is missing or date is invalid
     """
     if not year:
-        return HTTPError(status=422, body="Missing `year` parameter")
+        return HTTPError(status=400, body="Missing `year` parameter")
     elif not artist:
-        return HTTPError(status=422, body="Missing `artist` parameter")
+        return HTTPError(status=400, body="Missing `artist` parameter")
     elif not genre:
-        return HTTPError(status=422, body="Missing `genre` parameter")
+        return HTTPError(status=400, body="Missing `genre` parameter")
     elif not album:
-        return HTTPError(status=422, body="Missing `album` parameter")
+        return HTTPError(status=400, body="Missing `album` parameter")
     else:
         return False
 
