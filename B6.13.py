@@ -100,7 +100,7 @@ def print_artist_albums(artist):
     artist_query = find_session.query(Album).filter(text(f'artist == "{artist}"')).all()
     find_session.close()
     if not artist_query:
-        return HTTPError(422, f'Artist "{artist}" does not exist in the database.')
+        return HTTPError(404, f'Artist "{artist}" does not exist in the database.')
     else:
         artist_albums = ["<li>" + album.album + "</li>" for album in artist_query]
         artist_albums = " ".join([str(album) for album in artist_albums])
