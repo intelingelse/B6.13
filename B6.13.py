@@ -24,7 +24,7 @@ class Album(Base):
 
 def connect_db():
     """
-    Устанавливает соединение к базе данных, создает таблицы, если их еще нет и возвращает объект сессии
+    Creates connection to the database, returns session object
     :return: session object
     """
     engine = sql.create_engine(DB_PATH)
